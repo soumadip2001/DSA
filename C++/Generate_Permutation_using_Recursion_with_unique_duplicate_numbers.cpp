@@ -11,6 +11,8 @@ void gen_permu(vector<int> &arr,int n,int idx){
 		return;
 	}
 	for(int i=idx;i<n;i++){
+		if(i!=idx && arr[idx]==arr[i])
+			continue;
 		swap(arr[idx],arr[i]);
 		gen_permu(arr,n,idx+1);
 		swap(arr[i],arr[idx]);
